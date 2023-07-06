@@ -1,0 +1,2 @@
+<button  class="text-white rounded-md mt-2" 
+[ngClass]="{class: class, 'bg-indigo-700 hover:bg-indigo-900' : !class, 'text-sm py-1 px-2' :buttonType === 'sm', 'py-3 px-8 text-3xl' :buttonType === 'lg', 'py-2 px-6':buttonType === 'md' }" [type]="type">{{name}}</button>

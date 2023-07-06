@@ -1,0 +1,35 @@
+<div class="relative flex text-gray-800 antialiased flex-col justify-center overflow-hidden py-6 sm:py-12">
+    <div class="relative py-3 sm:w-96 mx-auto text-center">
+        <span class="text-2xl font-light ">Register your account</span>
+        <div class="mt-4 bg-white shadow-md rounded-lg text-left">
+            <div class="h-2 bg-indigo-700 rounded-t-md"></div>
+            <form [formGroup]="loginForm" (submit)="onSubmit()">
+                <div class="px-8 py-6 ">
+                    <div>
+                        <NgTInput [control]="loginFormControl.name" lable="Name" />
+                        <NgTError class="text-danger" *ngIf="(loginFormControl.name.touched || submitted) && loginFormControl.name.errors?.required" error="Name is required!" />
+                    </div>
+
+                    <div>
+                        <NgTInput [control]="loginFormControl.email" lable="Email" />
+                        <NgTError class="text-danger" *ngIf="(loginFormControl.email.touched || submitted) && loginFormControl.email.errors?.required" error="Email is required!" />
+                    </div>
+
+                    <div>
+                        <NgTInput type="password" [control]="loginFormControl.password" lable="Password" />
+                        <NgTError class="text-danger" *ngIf="(loginFormControl.password.touched || submitted) && loginFormControl.password.errors?.required" error="Password is required!" />
+                    </div>
+
+                    <NgTButton name="Register" type="submit" />
+                </div>
+            </form>
+            
+            <div class="px-8 pb-4">
+                <!-- Don't have an account yet? <a class="text-indigo-600 font-bold" routerLink="/register">Register Now</a> -->
+                Already have an account?  <a class="font-bold text-indigo-600" routerLink="/login">Login</a>
+            </div>  
+           
+        </div>
+       
+    </div>
+</div>
